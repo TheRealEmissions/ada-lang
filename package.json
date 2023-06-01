@@ -1,11 +1,12 @@
 {
-  "name": "ts-modular-bot-template",
+  "name": "ada-lang",
   "version": "1.0.0",
-  "description": "Template for creating Addons for the Modular Series",
+  "description": "Everything to do with lang for Ada",
   "main": "out/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx tsc && copyfiles -u 1 config/*.yml out/config"
+    "compile": "npx tsc && copyfiles -u 1 config/*.yml out/config",
+    "compiletypes": "npx tsc --emitDeclarationOnly && copyfiles -u 1 config/*.yml out/config"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,9 @@
   },
   "type": "module",
   "dependencies": {
-    "ts-modular-bot-addon-command_handler-types": "github:therealemissions/ts-modular-bot-addon-command_handler-types",
-    "ts-modular-bot-addon-discord_client-types": "github:therealemissions/ts-modular-bot-addon-discord_client-types",
-    "ts-modular-bot-addon-events-types": "github:therealemissions/ts-modular-bot-addon-events-types",
+    "ada-types": "github:therealemissions/ada-types",
+    "discord.js": "^14.11.0",
     "ts-modular-bot-file-design": "github:therealemissions/ts-modular-bot-file-design",
-    "ts-modular-bot-types": "github:therealemissions/ts-modular-bot-types",
     "yaml": "^2.2.1"
   }
 }

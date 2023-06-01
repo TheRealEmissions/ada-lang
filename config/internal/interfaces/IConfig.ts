@@ -1,5 +1,9 @@
+import { APIEmbed } from "discord.js";
+
 export interface IConfig {
-  someConfigValue: {
-    anotherConfigValue: boolean;
+  Welcome: {
+    events: {
+      [key: string]: APIEmbed & { content?: string };
+    };
   };
 }

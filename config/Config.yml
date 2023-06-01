@@ -1,2 +1,16 @@
-someConfigValue:
-  anotherConfigValue: true
+Welcome:
+  events:
+    join:
+      ##################################################################
+      # PLACEHOLDERS                                                   #
+      #                                                                #
+      # %tag% - full tag of user (i.e. Emissions#2565)            #
+      # %username% - username of the user (i.e. Emissions)             #
+      # %discriminator% - discriminator of the user (i.e. 2565)        #
+      # %member_number% - # join number, i.e. 15                       #
+      # %member_number_ending% - the ending of the number, st, th etc. #
+      ##################################################################
+
+      author:
+        name: "Welcome %tag% to Discraft!"
+      description: "You are our %member_number%%member_number_ending% member!"

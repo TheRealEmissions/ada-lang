@@ -12,7 +12,7 @@
     "allowUnreachableCode": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "declarationDir": "./types/your-addon-name",
+    "declarationDir": "./types/lang",
     "disableSizeLimit": true,
     "esModuleInterop": false,
     "incremental": true,
@@ -20,5 +20,10 @@
     "removeComments": true
   },
   "include": ["./**/*"],
-  "exclude": ["./node_modules/**/*", "./out/**/*", "*/node_modules/**/*", "*/package-lock.json"]
+  "exclude": [
+    "./node_modules/**/*",
+    "./out/**/*",
+    "*/node_modules/**/*",
+    "*/package-lock.json"
+  ]
 }

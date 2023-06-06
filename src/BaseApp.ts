@@ -31,7 +31,7 @@ abstract class BaseApp extends Base {
 
   // Ensure that you specify the correct dependencies!
   getDependencies(): Dependency[] {
-    return [];
+    return [] as Dependency[];
   }
 
   getLang() {

@@ -7,14 +7,16 @@ export class JoinEventLang extends BaseLang {
     username: string,
     discrim: string,
     memberNumber: string,
-    memberNumberEnding: string
+    memberNumberEnding: string,
+    avatarUrl: string
   ) {
     const placeholders = {
       tag,
       username,
-      memberNumber,
-      memberNumberEnding,
+      member_number: memberNumber,
+      member_number_ending: memberNumberEnding,
       discriminator: discrim,
+      avatar_url: avatarUrl,
     };
     return {
       author: {
@@ -28,6 +30,13 @@ export class JoinEventLang extends BaseLang {
         Config.Welcome.events.join.description,
         placeholders
       ),
+      thumbnail: {
+        url:
+          BaseLang.convertPlaceholders(
+            Config.Welcome.events.join.thumbnail?.url,
+            placeholders
+          ) ?? avatarUrl,
+      },
     };
   }
 }

@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/TheRealEmissions/ts-modular-bot-addon-template#readme",
   "devDependencies": {
-    "@tsconfig/node18": "^1.0.1"
+    "@tsconfig/node18": "^1.0.1",
+    "copyfiles": "^2.4.1"
   },
   "type": "module",
   "dependencies": {

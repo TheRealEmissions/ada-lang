@@ -1,0 +1,4 @@
+[submodule "types"]
+	path = types
+	url = https://github.com/therealemissions/ada-lang-types.git
+	branch = master

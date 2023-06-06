@@ -1,4 +1,5 @@
 import { Config } from "../../../../config/internal/Config.js";
+import { Defaults } from "../../../../config/internal/Defaults.js";
 import { BaseLang } from "../../../BaseLang.js";
 
 export class JoinEventLang extends BaseLang {
@@ -8,7 +9,7 @@ export class JoinEventLang extends BaseLang {
     discrim: string,
     memberNumber: string,
     memberNumberEnding: string,
-    avatarUrl: string
+    avatarUrl?: string
   ) {
     const placeholders = {
       tag,
@@ -16,7 +17,7 @@ export class JoinEventLang extends BaseLang {
       member_number: memberNumber,
       member_number_ending: memberNumberEnding,
       discriminator: discrim,
-      avatar_url: avatarUrl,
+      avatar_url: avatarUrl ?? Defaults.embed.thumbnail.url,
     };
     return {
       author: {
@@ -35,7 +36,7 @@ export class JoinEventLang extends BaseLang {
           BaseLang.convertPlaceholders(
             Config.Welcome.events.join.thumbnail?.url,
             placeholders
-          ) ?? avatarUrl,
+          ) ?? Defaults.embed.thumbnail.url,
       },
     };
   }

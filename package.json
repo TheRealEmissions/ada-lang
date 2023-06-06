@@ -20,7 +20,6 @@
   "homepage": "https://github.com/TheRealEmissions/ts-modular-bot-addon-template#readme",
   "devDependencies": {
     "@tsconfig/node18": "^1.0.1",
-    "ada-lang-types": "github:therealemissions/ada-lang-types",
     "copyfiles": "^2.4.1"
   },
   "type": "module",

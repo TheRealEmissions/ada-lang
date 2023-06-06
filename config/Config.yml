@@ -15,4 +15,5 @@ Welcome:
       author:
         name: "Welcome %tag% to Discraft!"
       description: "You are our %member_number%%member_number_ending% member!"
-      thumbnail: { url: "%avatar_url%" }
+      thumbnail:
+        url: "%avatar_url%"

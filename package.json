@@ -24,9 +24,10 @@
   },
   "type": "module",
   "dependencies": {
+    "ada-events-types": "github:therealemissions/discordia-events-types#ada",
+    "ada-file-design": "github:therealemissions/ada-file-design",
     "ada-types": "github:therealemissions/ada-types",
     "discord.js": "^14.11.0",
-    "ts-modular-bot-file-design": "github:therealemissions/ts-modular-bot-file-design",
     "yaml": "^2.2.1"
   }
 }

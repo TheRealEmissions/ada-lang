@@ -3,6 +3,7 @@ import { Defaults } from "../../../../config/internal/Defaults.js";
 import { BaseLang } from "../../../BaseLang.js";
 
 export class JoinEventLang extends BaseLang {
+  @BaseLang.convertAllPlaceholders()
   welcome(
     tag: string,
     username: string,
@@ -22,22 +23,16 @@ export class JoinEventLang extends BaseLang {
     return {
       author: {
         name:
-          BaseLang.convertPlaceholders(
-            Config.Welcome.events.join.author?.name,
-            placeholders
-          ) ?? "There's supposed to be text here... please tell someone!",
+          Config.Welcome.events.join.author?.name ??
+          "There's supposed to be text here... please tell someone!",
       },
-      description: BaseLang.convertPlaceholders(
-        Config.Welcome.events.join.description,
-        placeholders
-      ),
+      description: Config.Welcome.events.join.description,
       thumbnail: {
         url:
-          BaseLang.convertPlaceholders(
-            Config.Welcome.events.join.thumbnail?.url,
-            placeholders
-          ) ?? Defaults.embed.thumbnail.url,
+          Config.Welcome.events.join.thumbnail?.url ??
+          Defaults.embed.thumbnail.url,
       },
+      placeholders,
     };
   }
 }

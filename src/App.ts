@@ -1,3 +1,4 @@
+import { GeneralEvents } from "ada-events-types";
 import BaseApp from "./BaseApp.js";
 
 class App extends BaseApp {
@@ -5,7 +6,11 @@ class App extends BaseApp {
     super();
   }
 
-  async init(): Promise<void> {}
+  async init(): Promise<void> {
+    this.getEvents()
+      .getEventEmitter()
+      .emit(GeneralEvents.INFO, "Ada Lang loaded");
+  }
 }
 
 export default App;

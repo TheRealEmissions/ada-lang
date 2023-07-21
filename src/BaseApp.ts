@@ -1,6 +1,7 @@
-import Base from "ts-modular-bot-file-design";
-import { Dependency } from "ada-types";
+import Base from "ada-file-design";
+import { Dependencies, Dependency } from "ada-types";
 import { JoinEventLang } from "../core/Welcome/events/join/JoinEventLang.js";
+import Events from "ada-events-types";
 
 abstract class BaseApp extends Base {
   constructor() {
@@ -13,11 +14,15 @@ abstract class BaseApp extends Base {
     };
   }
 
-  Welcome: {
+  private Welcome: {
     events: {
       join: JoinEventLang;
     };
   };
+
+  getWelcomeLang() {
+    return this.Welcome;
+  }
 
   type: Dependency = Dependency.LANG;
   name: string = "Ada Lang";
@@ -25,9 +30,15 @@ abstract class BaseApp extends Base {
 
   abstract init(): Promise<void>;
 
+  @Dependencies.inject(Dependency.EVENTS)
+  static Events: typeof Events;
+  public getEvents() {
+    return BaseApp.Events;
+  }
+
   // Ensure that you specify the correct dependencies!
   getDependencies(): Dependency[] {
-    return [];
+    return [Dependency.EVENTS];
   }
 }
 
